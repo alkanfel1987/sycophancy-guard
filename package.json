@@ -1,0 +1,44 @@
+{
+  "name": "sycophancy-guard",
+  "version": "0.2.0",
+  "description": "Detect bias-inducing patterns in YOUR prompts (not Claude's responses) and inject a hidden compensation notice into Claude's context before the answer forms. A self-applied calibration system for Claude Code.",
+  "main": "lib/rules.js",
+  "scripts": {
+    "test": "node tests/test.js",
+    "install:hook": "node install.js",
+    "uninstall:hook": "node uninstall.js",
+    "stats": "node stats/analyzer.js"
+  },
+  "keywords": [
+    "claude-code",
+    "sycophancy",
+    "bias-detection",
+    "calibration",
+    "llm-safety",
+    "hook",
+    "user-prompt-submit"
+  ],
+  "author": "alkanfel1987",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alkanfel1987/sycophancy-guard.git"
+  },
+  "files": [
+    "hooks/",
+    "lib/",
+    "stats/",
+    "commands/",
+    "tests/",
+    "install.js",
+    "uninstall.js",
+    "settings.example.json",
+    "SKILL.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ]
+}

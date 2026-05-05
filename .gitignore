@@ -1,0 +1,10 @@
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+sycophancy-log.jsonl
+sycophancy-feedback.jsonl
+sycophancy-guard.local.json
+settings.json.bak.*

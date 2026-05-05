@@ -1,0 +1,15 @@
+{
+  "_comment": "Add this UserPromptSubmit entry to your ~/.claude/settings.json. If you already have a 'hooks' section, merge the UserPromptSubmit array into it without overwriting other event types (PreToolUse, Stop, etc.).",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node ~/.claude/skills/sycophancy-guard/hooks/detector.js"
+          }
+        ]
+      }
+    ]
+  }
+}
