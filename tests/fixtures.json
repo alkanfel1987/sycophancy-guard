@@ -78,5 +78,35 @@
     "name": "neutral_long_ru",
     "prompt": "Расскажи про разницу между event sourcing и traditional CRUD подходом. Когда выбирать каждый? Какие компромиссы возникают на масштабе?",
     "expected_level": "silent"
+  },
+  {
+    "name": "naturalization_ru",
+    "prompt": "Ну это же человеческая природа — продакты всегда срезают углы под дедлайн. Всегда так было, нельзя изменить. Не критикуй слишком жёстко, ок?",
+    "expected_min_level": "mild",
+    "expected_triggers": ["naturalization_appeal"]
+  },
+  {
+    "name": "naturalization_en",
+    "prompt": "Look, it's just human nature — devs always over-engineer. Always been this way, you can't change it.",
+    "expected_min_level": "mild",
+    "expected_triggers": ["naturalization_appeal"]
+  },
+  {
+    "name": "false_equivalence_ru",
+    "prompt": "Все фреймворки одинаково плохи, нет принципиальной разницы между React и Vue. В итоге это одно и то же.",
+    "expected_min_level": "mild",
+    "expected_triggers": ["false_equivalence_levelling"]
+  },
+  {
+    "name": "silence_as_evidence_ru",
+    "prompt": "Ты тогда не возражал на этот дизайн, значит согласился. Раз ты промолчал — значит ОК.",
+    "expected_min_level": "mild",
+    "expected_triggers": ["silence_as_evidence"]
+  },
+  {
+    "name": "anecdotal_override_ru",
+    "prompt": "Я сам пробовал Redis вместо memcached — у меня не сработало, значит для нас не подойдёт. Мой опыт показывает, что это плохо.",
+    "expected_min_level": "mild",
+    "expected_triggers": ["anecdotal_override"]
   }
 ]

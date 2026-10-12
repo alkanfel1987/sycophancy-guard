@@ -1,6 +1,6 @@
 {
   "name": "sycophancy-guard",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Detect bias-inducing patterns in YOUR prompts (not Claude's responses) and inject a hidden compensation notice into Claude's context before the answer forms. A self-applied calibration system for Claude Code.",
   "main": "lib/rules.js",
   "scripts": {

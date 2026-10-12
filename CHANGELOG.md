@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] — 2026-10-13
+
+### Added
+- **Four Nyāya jāti rule categories** anchored to `pantheon-vedic-catalogue` entries:
+  - `naturalization_appeal` (severity 2) — «человеческая природа», «всегда так было», «нельзя изменить» / «human nature», «always been this way». Anchor: `ns-nityasama-5-1-35`. The user frames a contingent fact as immutable to suppress critique.
+  - `false_equivalence_levelling` (severity 2) — «все одинаково плохи», «нет принципиальной разницы», «both sides equally bad», «all the same». Anchors: `ns-avisesa-sama-5-1-23`, `ns-anityasama-5-1-32`. The user collapses genuine distinctions via a trivial shared property.
+  - `silence_as_evidence` (severity 2) — «ты не возражал, значит согласен», «твоё молчание означает», «your silence means». Anchor: `ns-apratibha-5-2-18`. Distinct from `manufactured_consistency` (which cites prior STATEMENTS, not silence).
+  - `anecdotal_override` (severity 2) — «я сам пробовал», «у меня не сработало», «my experience proves». Anchor: `ns-upalabdhi-sama-5-1-27`. Single direct experience used to displace systematic reasoning.
+- Five new fixtures in `tests/fixtures.json` covering the new categories.
+- `tests/benchmark_holdout.js` — independent held-out benchmark (N=40, single annotator) with Wilson 95% CI and a naive keyword baseline.
+
+### Fixed
+- The detector no longer scores service envelopes (`<task-notification>`, `<system-reminder>`, channel messages, subagent hand-backs) that arrive in the prompt field but are not the user's words: 81 of 634 warnings in the first four months were raised on them.
+
+### Why this matters
+The four new categories surface when the user invokes Nyāya-classified epistemic-defeat patterns to manufacture my agreement. The grounding is in Gautama's Nyāya-sūtra book 5 (Vātsyāyana-bhāṣya), corpus-confirmed via the `pantheon-vedic-catalogue` repo. This is the first time sycophancy-guard rules are anchored to an external classical source-of-truth rather than seeded from observation.
+
 ## [0.2.0] — 2026-05-06
 
 ### Added

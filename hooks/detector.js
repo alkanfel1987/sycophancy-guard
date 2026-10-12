@@ -63,6 +63,21 @@ function run(raw) {
     return;
   }
 
+  // Служебные конверты (уведомления о фоновых задачах, системные напоминания,
+  // сообщения из каналов) приходят в том же поле prompt, но словами пользователя
+  // не являются. Оценивать в них тон и рамку бессмысленно: 81 из 634
+  // предупреждений за первые 4 месяца выдано именно на них.
+  if (/^<(task-notification|system-reminder|channel|ci-monitor-event|command-name|local-command)\b/i.test(prompt.trim())) {
+    process.exit(0);
+    return;
+  }
+  // Отчёт исполнителя начинается с фразы-обёртки, а не с тега, — проверка начала его пропускала:
+  // «GRETIL» в отчёте был засчитан как восторг оператора (2026-10-13).
+  if (/\[Subagent hand-back\]|<agent-message\s/.test(prompt.slice(0, 400))) {
+    process.exit(0);
+    return;
+  }
+
   const triggered = detect(prompt, { disabled_rules: cfg.disabled_rules });
   const s = score(triggered);
   const lvl = levelWith(s, cfg.thresholds);
